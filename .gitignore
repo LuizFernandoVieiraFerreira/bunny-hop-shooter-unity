@@ -1,12 +1,12 @@
 # Unity project files to ignore
-/UnityProject/[Ll]ibrary/
-/UnityProject/[Tt]emp/
-/UnityProject/[Oo]bj/
-/UnityProject/[Bb]uild/
-/UnityProject/[Ll]ogs/
-/UnityProject/[Uu]ser[Ss]ettings/
-/UnityProject/[Mm]emoryCaptures/
-/UnityProject/[Rr]ecordings/
+/unity-project/[Ll]ibrary/
+/unity-project/[Tt]emp/
+/unity-project/[Oo]bj/
+/unity-project/[Bb]uild/
+/unity-project/[Ll]ogs/
+/unity-project/[Uu]ser[Ss]ettings/
+/unity-project/[Mm]emoryCaptures/
+/unity-project/[Rr]ecordings/
 
 # IDE files
 .vscode/
