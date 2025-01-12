@@ -1,0 +1,22 @@
+# Unity project files to ignore
+/UnityProject/[Ll]ibrary/
+/UnityProject/[Tt]emp/
+/UnityProject/[Oo]bj/
+/UnityProject/[Bb]uild/
+/UnityProject/[Ll]ogs/
+/UnityProject/[Uu]ser[Ss]ettings/
+/UnityProject/[Mm]emoryCaptures/
+/UnityProject/[Rr]ecordings/
+
+# IDE files
+.vscode/
+.idea/
+
+# Gradle cache
+.gradle/
+
+# Build files
+*.apk
+*.aab
+*.unitypackage
+*.app
