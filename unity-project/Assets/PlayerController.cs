@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
 
     // public LayerMask collisionMask;
 
+    public GameObject bulletPrefab;
+    private float shootTimer = 0f;
+    private float shootCooldown = 0.2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
         // if (isAlive)
         // {
             HandleMovement();
-            // HandleShooting();
+            HandleShooting();
             // HandleDamageFlicker();
 
             // Update timers
@@ -54,6 +58,8 @@ public class PlayerController : MonoBehaviour
         // Basic movement using the arrow keys or WASD
         movement.x = Input.GetKey(KeyCode.LeftArrow) ? -1 : Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
         movement.y = Input.GetKey(KeyCode.UpArrow) ? 1 : Input.GetKey(KeyCode.DownArrow) ? -1 : 0;
+
+        // Option A:
 
         // Use velocity in terms of pixels per second
         velocity = movement.normalized * speed;
@@ -81,17 +87,48 @@ public class PlayerController : MonoBehaviour
         float newPosY = Mathf.Clamp(transform.position.y + velocity.y, -cameraHeight / 2 + halfHeight, cameraHeight / 2 - halfHeight);
 
         transform.position = new Vector2(newPosX, newPosY);
+
+        // Option B:
+
+        // float moveX = Input.GetAxisRaw("Horizontal"); // -1, 0, or 1
+        // float moveY = Input.GetAxisRaw("Vertical");   // -1, 0, or 1
+
+        // // Get the camera's world bounds (in units, not pixels)
+        // float halfWidth = spriteRenderer.bounds.size.x / 2;
+        // float halfHeight = spriteRenderer.bounds.size.y / 2;
+
+        // // Get the camera's orthographic size and aspect ratio to calculate the edges of the screen in world units
+        // float cameraHeight = Camera.main.orthographicSize * 2;
+        // float cameraWidth = cameraHeight * Camera.main.aspect;
+
+        // // Move the player by a fixed number of units per second (pixel-perfect)
+        // float newPosX = Mathf.Clamp((moveX) + speed * Time.deltaTime, -cameraWidth / 2 + halfWidth, cameraWidth / 2 - halfWidth);
+        // float newPosY = Mathf.Clamp((moveY) + speed * Time.deltaTime, -cameraHeight / 2 + halfHeight, cameraHeight / 2 - halfHeight);
+        // transform.position = new Vector2(newPosX, movement.y);
     }
 
-    // void HandleShooting()
-    // {
-    //     if (shootTimer > shootCooldown && Input.GetKey(KeyCode.Space)) // Fire on Space key
-    //     {
-    //         // Create bullet (For now, you can just log the shot or instantiate a bullet object)
-    //         Debug.Log("Shooting");
-    //         shootTimer = 0;
-    //     }
-    // }
+    void HandleShooting()
+    {
+        // Update shoot timer
+        shootTimer += Time.deltaTime;
+
+        // Handle shooting
+        if (Input.GetKeyDown(KeyCode.Space) && shootTimer >= shootCooldown)
+        {
+            Shoot();
+            shootTimer = 0f;
+        }
+    }
+
+    private void Shoot()
+    {
+        float bulletX = transform.position.x;
+        float bulletY = transform.position.y;
+
+        Vector2 bulletPosition = new Vector2(bulletX, bulletY);
+
+        Instantiate(bulletPrefab, bulletPosition, Quaternion.identity);
+    }
 
     // void HandleDamageFlicker()
     // {
