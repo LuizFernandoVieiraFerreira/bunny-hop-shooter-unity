@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    public GameObject explosionPrefab;
+
     void Start()
     {
         
@@ -14,10 +17,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"Collision detected with: {collision.gameObject.name}");
+        Debug.Log($"[Enemy] Collision detected with: {collision.gameObject.name}");
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

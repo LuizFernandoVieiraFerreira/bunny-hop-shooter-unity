@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-     private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"Collision detected with: {collision.gameObject.name}");
+        Debug.Log($"[Bullet] Collision detected with: {collision.gameObject.name}");
 
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
         {
