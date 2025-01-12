@@ -20,3 +20,6 @@
 *.aab
 *.unitypackage
 *.app
+
+# macOS
+.DS_Store
