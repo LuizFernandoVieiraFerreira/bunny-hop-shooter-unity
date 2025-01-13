@@ -8,13 +8,13 @@ public enum BombAIBehaviour
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject explosionPrefab;
+
     public BombAIBehaviour aiBehaviour = BombAIBehaviour.Idle;
     public float range = 2f;
     private float speed = 1f;
     private float startY;
     private bool goingUp = true;
-
-    public GameObject explosionPrefab;
 
     void Start()
     {

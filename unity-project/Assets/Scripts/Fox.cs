@@ -8,6 +8,7 @@ public enum FoxAIBehaviour
 public class Fox : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject explosionPrefab;
     public FoxAIBehaviour aiBehaviour = FoxAIBehaviour.UpDownShoot;
     private float shootTimer = 0f;
     private float shootCooldown = 1f;
@@ -80,6 +81,8 @@ public class Fox : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

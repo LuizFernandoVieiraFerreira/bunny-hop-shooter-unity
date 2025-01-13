@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 736055448890515786}
   - component: {fileID: 8423527990265654517}
   - component: {fileID: 8225597530608392224}
+  - component: {fileID: -5976253878184420011}
   m_Layer: 0
   m_Name: SmallerMeteor
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +135,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5976253878184420011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644853166889811263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebfd9032c8614aa2bf6dc14cf3e4fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}

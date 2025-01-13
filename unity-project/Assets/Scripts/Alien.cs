@@ -8,6 +8,7 @@ public enum AlienAIBehaviour
 public class Alien : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject explosionPrefab;
     public AlienAIBehaviour aiBehaviour = AlienAIBehaviour.Shoot;
     private float shootTimer = 0f;
     private float shootCooldown = 1f;
@@ -54,6 +55,8 @@ public class Alien : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

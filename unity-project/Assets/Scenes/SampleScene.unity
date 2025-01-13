@@ -615,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9176230819145461212, guid: 20092ede240c441b9914f2faf8998c09, type: 3}
+  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
   aiBehaviour: 0
 --- !u!1 &962502559
 GameObject:
@@ -1065,9 +1066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb703bdfcc644632bec0d3705bf28bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
   aiBehaviour: 0
   range: 2
-  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
 --- !u!1 &1205928622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4402781898946315152, guid: f029beeed2e054088a420353d1783c00, type: 3}
+  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
   aiBehaviour: 0
   range: 2
 --- !u!1 &1216581364
@@ -1446,9 +1448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb703bdfcc644632bec0d3705bf28bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
   aiBehaviour: 1
   range: 2
-  explosionPrefab: {fileID: 1938318872229813473, guid: 04da9e68091844aa4b63c3d9b873ece7, type: 3}
 --- !u!212 &1621061857
 SpriteRenderer:
   m_ObjectHideFlags: 0
