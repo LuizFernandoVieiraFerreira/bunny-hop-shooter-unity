@@ -1,55 +1,29 @@
 using UnityEngine;
 
-public enum FoxAIBehaviour
+public enum AlienAIBehaviour
 {
-    UpDownShoot,
+    Shoot,
 }
 
-public class Fox : MonoBehaviour
+public class Alien : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public FoxAIBehaviour aiBehaviour = FoxAIBehaviour.UpDownShoot;
+    public AlienAIBehaviour aiBehaviour = AlienAIBehaviour.Shoot;
     private float shootTimer = 0f;
     private float shootCooldown = 1f;
-    public float range = 2f;
-    private float speed = 1f;
-    private float startY;
-    private bool goingUp = true;
 
     void Start()
     {
-        startY = transform.position.y;
+        
     }
 
     void Update()
     {
         switch (aiBehaviour)
         {
-            case FoxAIBehaviour.UpDownShoot:
-                MoveUpDown();
+            case AlienAIBehaviour.Shoot:
                 HandleShooting();
                 break;
-        }
-    }
-
-    private void MoveUpDown()
-    {
-        if (goingUp)
-        {
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
-        }
-
-        if (transform.position.y > startY + range)
-        {
-            goingUp = false;
-        }
-        else if (transform.position.y < startY - range)
-        {
-            goingUp = true;
         }
     }
 
@@ -76,7 +50,7 @@ public class Fox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"[Fox] Collision detected with: {collision.gameObject.name}");
+        Debug.Log($"[Alien] Collision detected with: {collision.gameObject.name}");
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
